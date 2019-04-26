@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Object & Array Functions</title>
+
+	<script type="text/javascript">
+//JAVASCRIPT FUNCTIONS EX 1 Calculating Tip
+/*
+Exercise 1
+Calculating gratuity is a repetitive task, so let's create a couple of functions that do the work for us.
+
+1. create a variable titled billAmount and store a random number (ie: 100)
+2. create a function titled gratuity()
+3. gratutity should: multiply the value of billAmount by 20%, hint: use 0.2
+4. return the value
+5. create a function titled totalWithGrat()
+6. totalWithGrat should: take in the amount as an argument
+7. call the gratutity function
+8. add that to the original bill amount
+9. return the total bill + gratuity
+10. log the total (with gratuity) to the console
+11. append new total to the following phrase: "your total including gratuity is:"
+
+
+// 1. create a variable titled billAmount and store a random number (ie: 100)
+var billAmount = 100;
+// 2. create a function titled gratuity()
+function gratuity() {
+// 3. gratutity should: multiply the value of billAmount by 20%, hint: use 0.2
+// 4. return the value
+	 return billAmount *.2;
+
+}
+// 5. create a function titled totalWithGrat()
+// 6. totalWithGrat should: take in the amount as an argument
+function totalWithGrat() {
+// 7. call the gratutity function
+// 8. add that to the original bill amount
+// 9. return the total bill + gratuity	
+	return (gratuity() + billAmount).toFixed(2);
+}
+// 10. log the total (with gratuity) to the console
+// 11. append new total to the following phrase: "your total including gratuity is:"
+console.log("your total including gratuity is: ", totalWithGrat());
+*/
+
+var billAmount = Number(prompt("How much was your bill?"));
+var tip = Number(prompt("What percentage would you like to tip?"));
+
+function gratuity() {
+	 return billAmount * (tip/100);
+}
+
+function totalWithGrat(){
+	return gratuity() + billAmount.toFixed(2); //.toFixed method returns a string, so turn it back into a number.
+}
+debugger;
+
+console.log("Your bill: ", billAmount);
+console.log("Your tip: ", gratuity());
+console.log("Your total including gratuity is: ", totalWithGrat());
+
+
+
+
+
+
+
+
+
+
+
+
+
+//________________________________________________________________________	
+//________________________________________________________________________
+//________________________________________________________________________	
+//1. create an array
+/*
+		var shopping = ['pop tarts', 'ramen noodles', 'chips', 'salsa', 'coffee']
+		console.log(shopping);
+
+//2. use push, add fruitloops
+
+		var shopping1 = ['pop tarts', 'ramen noodles', 'chips', 'salsa', 'coffee']
+			shopping1.push("fruit loops");
+			console.log(shopping1);
+
+//3. Update 'coffee' to 'fair trade coffee'
+
+		var shopping2 = ['pop tarts', 'ramen noodles', 'chips', 'salsa', 'coffee']
+			shopping2.splice(4,1,'fair trade coffee');
+			console.log(shopping2);
+
+			//OR
+
+		var shopping2 = ['pop tarts', 'ramen noodles', 'chips', 'salsa', 'coffee']
+			shopping2[4] ='fair trade coffee';
+			console.log(shopping2);
+
+
+// 4. Replace 'chips' and 'salsa' with 'rice' and 'beans'
+
+		var shopping3 = ['pop tarts', 'ramen noodles', 'chips', 'salsa', 'coffee']
+			shopping3.splice(2,2,'rice','beans');
+			console.log(shopping3);
+
+// 5. Create an empty array to represent your shopping cart.
+// 6. Remove the last item from your shopping list and add it to your cart
+
+		var shopping4 = ['pop tarts', 'ramen noodles', 'chips', 'salsa', 'coffee']
+		var cart      = [];
+		shopping4.pop('coffee');
+		cart.push('coffee');
+			console.log(shopping4);
+			console.log(cart);
+// 7. Remove the first item from your shopping list and add it to the cart
+		var shopping5 = ['pop tarts', 'ramen noodles', 'chips', 'salsa', 'coffee']
+		var cart  = [];
+	
+		cart.push(shopping5.shift());
+				console.log(shopping5);
+				console.log(cart);
+
+//8. Write a 'while' loop that takes items from your shopping list and moves them to your cart until there are no items left on the list.
+		var shopping5 = ['pop tarts', 'ramen noodles', 'chips', 'salsa', 'coffee']
+		var cart1 = [];
+
+		while (shopping5.length > 0){
+			//shopping5.shift();
+			//cart1.pop();
+			cart1.push(shopping5.pop());
+		}
+		console.log("shopping list: ", shopping5);
+		console.log("shopping cart filled with: ", cart1);
+		console.log("We completed our grocery list.");
+		console.log(cart1);
+
+		var walmartKart = []
+		walmartKart
+
+// 9. Sort the items in your cart alphabetically... backwards
+		var shopping6 = ['pop tarts', 'ramen noodles', 'chips', 'salsa', 'coffee']
+		var cart2 = cart1
+		//console.log(cart2);
+		//cart1.sort();
+		//console
+		cart1.sort().reverse();
+		console.log(cart2)
+
+// 10. Print the list of items in your shopping cart to the console as comma separated string.
+
+var outputString = "";
+
+for (var i=0; i < walmartKart.length; i++) {
+	outputString += walmartKart[i] + " , ";
+}
+
+var kylestring = walmartKart.join(" ,");
+
+console.log(walmartKart.toString());
+
+	Exercise: Addressing Objects
+Get the following values:
+
+1. Name of the course ('JavaScript Applications')
+2. Name of the second teacher ('Shane')
+3. Name of the first student ('Steve')
+4. Katy's computer type ('macbook')
+5. The preReq equipment object
+6. The second OSOption from equipment prereqs ('osx')
+7. String listing the OSOptions separated by 'or' ('linux or osx')
+8. An  array of all the students that are using OSX.
+
+var course = {
+	name: 'JavaScript Applications',
+	awesome: true,
+	teachers: ['Assaf', 'Shane'],
+	students: [
+		{
+			name: 'Steve',
+			computer: {
+				OS: 'Linux',
+				type: 'laptop'
+			}
+		},
+		{
+			name: 'Katy',
+			computer: {
+				OS: 'OSX',
+				type: 'macbook'
+			}
+		},
+		{
+			name: 'Chuck',
+			computer: {
+				OS: 'OSX',
+				type: 'macbook'
+			}
+		}
+
+	],
+	preReqs : {
+		skills : ['html', 'css', 'git'],
+		equipment: {
+			laptop: true,
+			OSOptions: ['linux', 'osx']
+		}
+	}
+};
+
+// 1. Name of the course ('JavaScript Applications')	
+console.log("course name: ", course.name);
+
+//2. Name of the second teacher ('Shane')
+console.log("second teacher: ", course.teachers[1]);
+
+// 3. Name of the first student ('Steve')
+console.log("first student: ", course.students[0].name);
+
+// 4. Katy's computer type ('macbook')
+
+console.log("Katy's computer: ", course.students[1].computer.type);
+
+// 5. The preReq equipment object
+console.log("equipment object: ", course.preReqs.equipment);
+
+// 6. The second OSOption from equipment prereqs ('osx')
+console.log("second OS option: ", course.preReqs.equipment.OSOptions[1]);
+
+// 7. String listing the OSOptions separated by 'or' ('linux or osx')
+console.log("second OS option: ", course.preReqs.equipment.OSOptions.join(" or "));
+
+// 8. An  array of all the students that are using OSX.
+//console.log("array of students using OSX: ", course.students);
+
+var osxStudents = [];
+	for (var i = 0; course.students.length > i; i++) {
+		if (course.students[i].computer.OS === "OSX") {
+			osxStudents.push(course.students[i].name);
+		}
+	}
+	console.log("array of students using OSX: ", osxStudents);
+//console.log("array of students using OSX: ", 
+				//course.students[i].computer.OS);
+
+//KING'S CODE, USING A MAP FUNCTION
+
+// map method using an arrow function
+let arr = [];
+course.students.map(student => {
+	if (student.computer.OS === 'OSX') {
+		arr.push(student.name);
+	}
+})
+console.log(arr);
+
+//map method using anonymous function
+course.students.map(function (student){
+	if (student.computer.OS === 'OSX') {
+		arr.push(student.name)
+	}
+})
+
+Collapse
+*/
+
+
+
+
+	</script>
+</head>
+<body>
+	<h1>Exercise 1</h1>
+	<p>
+​1. Create an array to represent your shopping list with the following items: 'pop tarts', 'ramen noodles', 'chips', 'salsa', and 'coffee'.
+
+2. Add 'fruit loops' to the list. use push
+
+3. Update 'coffee' to 'fair trade coffee'
+
+4. Replace 'chips' and 'salsa' with 'rice' and 'beans'
+ 
+5. Create an empty array to represent your shopping cart.
+
+6. Remove the last item from your shopping list and add it to your cart
+
+7. Remove the first item from your shopping list and add it to the cart
+
+8. Write a 'while' loop that takes items from your shopping list and moves them to your cart until there are no items left on the list.
+
+9. Sort the items in your cart alphabetically... backwards
+
+10. Print the list of items in your shopping cart to the console as comma separated string.
+	</p>
+
+	Exercise: Addressing Objects
+Get the following values:
+
+Name of the course ('JavaScript Applications')
+Name of the second teacher ('Shane')
+Name of the first student ('Steve')
+Katy's computer type ('macbook')
+The preReq equipment object
+The second OSOption from equipment prereqs ('osx')
+String listing the OSOptions separated by 'or' ('linux or osx')
+An array of all the students that are using OSX.
+
+</body>
+</html>
