@@ -14,54 +14,68 @@ var rock = 0;
 var paper = 1;
 var scissors = 2;
 
-function rock() {
-    var hand = document.getElementById("rock").innerHTML;
-    userChoice = hand;
-    console.log(userAnswer);
-    playGame();
+var playerRock = document.getElementById("rocky").addEventListener("click", choseRock);
+var playerPaper = document.getElementById("papery").addEventListener("click", chosePaper);
+var playerScissors = document.getElementById("scissorsy").addEventListener("click", choseScissors);
+
+function choseRock() {
+    // var hand = 
+    // userChoice = hand;
+    // console.log(userAnswer);
+    // playGame();
+    userChoice = 'rock';
+    playGame(userChoice);
+    console.log("User chose rock");
 }
 
-function paper(){
 
-    var hand = document.getElementById("paper").innerHTML;
-    userChoice = hand;
-    console.log(userAnswer);
-    playGame();
+
+function chosePaper(){
+ 	userChoice = 'paper';
+    playGame(userChoice);
+    console.log("User chose paper");
 
 }
 
-function scissors(){
-
-    var hand = document.getElementById("scissors").innerHTML;
-    userChoice = hand;
-    console.log(userAnswer);
-    playGame();
+function choseScissors(){
+ 	userChoice = 'scissors';
+    playGame(userChoice);
+    console.log("User chose scissors");
 }
 
-function playGame(){
+function playGame(banana){
         
         compyChoice = Math.floor(Math.random() * 3);
 
-    if (userChoice === compyChoice) {
+    if (banana === compyChoice) {
     	console.log("tied");
     	winner = "You tied";
+    	alert("You Tied");
     }
-    else if (userChoice === "rock" && compyChoice === scissors) {
-    	console.log("you win");
+    else if (banana === "rock" && compyChoice === scissors) {
+    	console.log("compy chose scissors")
     	winner = "You Win";
+    	alert("You Win");
+    	console.log("you win");
     }
 
-	else if (userChoice === "paper" && compyChoice === rock) {
-		console.log("You Win");
+	else if (banana === "paper" && compyChoice === rock) {
+		console.log("compy chose scissors")
 		winner = "You Win";
+		alert("You Win");
+		console.log("You Win");
 	}
-	else if (userChoice === "scissors"  && compyChoice === paper) {
-		console.log("You Win");
+	else if (banana === "scissors"  && compyChoice === paper) {
+		console.log("compy chose scissors")
 		winner = "You Win";
+		alert("You Win");
+		console.log("You Win");
 	}
 	else {
-		console.log("You Lose");
+		console.log("compy chose scissors")
 		winner = "You Lose";
+		alert("You Lose");
+		console.log("You Lose");
 	}
 }
 
@@ -134,40 +148,6 @@ function playGame(){
 // }
 // };
 
-
-
-function playGame() {   
- if (battleOutcome === "rock+0") {
-  		alert("We tied.");
-		}
-	 	else if(battleOutcome === "rock+1") {
-		alert("You lose Gandolf");
-	 	}
-	 	else if (battleOutcome === "rock+2") {
-	 		alert("You Win buddy");
-	 	}
-	 	else if (battleOutcome === "paper+0") {
-	 		alert("You lose Kelly Clarkson!");
-	 	}
-	 	else if (battleOutcome === "paper+1"){
-	 		alert("We tied hoser.")
-	 	}
-	 	else if (battleOutcome === "paper+2") {
-	 		alert("You lose Bart Simpson!")
-	 	}
-	 	else if (battleOutcome === "scissors+0") {
-	 		alert("You lose Pat Sayjack!");
-	 	}
-	 	else if (battleOutcome === "scissors+1") {
-	 		alert("You win Flynn!");
-	 	}
-	 	else if (battleOutcome === "scissors+2") {
-	 		alert("We tied Shmied");
-	 	}
-	 	else {
-	 		alert("Not an option, start over");
-	 	}
-}
 
 
 
