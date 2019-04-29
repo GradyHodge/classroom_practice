@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJAX Notes</title>
+
+   <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    
+    <div class="btn btn-info btn-lg">Big Fat Button</div>
+    <div id="boom" class="btn btn-info btn-lg">Do IT again</div>
+
+    <script>
+        //the ESC5 old way
+        //$(document).on("click", "#boom", function(){
+       // }) 
+        // the new ESC6 FAT ARROW FUNCTION SYNTAX, (basically same thing)
+        //below uses jquery
+        // $(document).on("click", "#boom", () => {
+        //     console.log("It's alive!");
+        //     $.ajax({
+        //         url: "https://jghibliapi.herokuapp.com/films",
+        //         method: "GET"
+        //     }).then((response) => {
+        //         console.log(response);
+        //     })
+        
+        // }) 
+
+        // $(document).on("click", "boom", 1 () => {
+        //     $ajax({
+        //         url: "https://jghibliapi.herokuapp.com/films",
+        //         method: "GET"
+        //     }).then((movies) => {
+        //         console.log(movies);
+        //         for(var i =0; i < movies.length; i++){
+        //             console.log(movies[i].title);
+        //             var title = $("<h3>").text("The movie is " + movies[i].title);
+        //         $(".dump1").append(title)
+        //         }
+        //     })
+        // })
+
+// the old way
+
+        document.getElementsByID("boom").addEventListener("click", () => {
+            $.get("https:.....", (movies => {
+                movies.forEach(movie => {
+                    console.log()
+                })
+                console.log(movies);
+                var dump1= document.querySelector(".dump1");
+                var header = document.createElement("h3");
+                dump1.appendChild(header);
+                header.appendChild(movie.title);
+            }))
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+    // document.getElementById("boom").addEventListener("click", () => {
+    //     $.get("https://jghibliapi.herokuapp.com/films", (movies => {
+    //         console.log(movies);
+    //     }))
+    // })
+
+
+    // $.get("https://jsonplaceholder.typicode.com/todos", (todos => {
+    //     //do something with it
+    //     console.log(todos[0].userId);
+    //     console.log(todos[0].title);
+    //     console.log(todos[0].completed);
+    //     // TODO: 
+    //     todos.forEach(todos => {
+
+    //     }.userID,
+
+    //     }
+
+    // }))    
+    </script>
+</body>
+</html>
